@@ -1,0 +1,86 @@
+@font-face {
+    font-family: "Press_Start_2p";
+    src: url("../fonts/Press_Start_2P/PressStart2P-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Roboto_Mono";
+    src: url("../fonts/Roboto_Mono/");
+}
+
+@font-face {
+    font-family: "Caveat";
+    src: url("../fonts/Caveat/Caveat-VariableFont_wght.ttf");
+}
+
+@font-face {
+    font-family: "MarckScript";
+    src: url("../fonts/Marck_Script/MarckScript-Regular.ttf");
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+    border: solid 1px black;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: wheat;
+}
+
+.navigation {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100vw;
+    padding: 10px 7vw;
+    background: linear-gradient(to left, aliceblue, rgba(240, 248, 255, .7));
+
+}
+
+.tab_collection {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    overflow-y: hidden;
+
+    font-family: "Caveat";
+    flex-grow: 1;
+}
+
+.tab {
+    padding: clamp(5px, 1vw, 10px);
+    font-size: 1.1em;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.introduction {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+
+.introduction .left,
+.introduction .right {
+    height: 100vh;
+    min-width: 480px;
+    flex-grow: 1;
+}
+
+.introduction .left {
+    background: linear-gradient(90deg, aliceblue, rgba(240, 248, 255, 0));
+}
