@@ -18,17 +18,41 @@
     src: url("../fonts/Marck_Script/MarckScript-Regular.ttf");
 }
 
+*::-webkit-scrollbar {
+    width: 0;
+}
+
+*::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: transparent;
+}
+
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 
-    border: solid 1px black;
-    scroll-behavior: smooth;
+    /* border: solid 1px black; */
 }
 
 body {
-    background-color: wheat;
+    /* background-color: rgb(210, 119, 137); */
+    overflow: hidden;
+}
+
+.snap {
+    scroll-snap-type: y proximity;
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+.snap div {
+    /* scroll-behavior: smooth; */
+    scroll-snap-align: start;
 }
 
 .navigation {
@@ -43,7 +67,9 @@ body {
 
     width: 100vw;
     padding: 10px 7vw;
-    background: linear-gradient(to left, aliceblue, rgba(240, 248, 255, .7));
+    background-color: rgb(210, 119, 137);
+    color: aliceblue;
+    text-shadow: 1px 1px 1px black;
 
 }
 
@@ -72,6 +98,13 @@ body {
     align-items: center;
     flex-wrap: wrap;
 
+    background-image: url("../img/background_2.png");
+    background-attachment: fixed;
+    background-position: 35% center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    filter: saturate(2) hue-rotate(10deg) brightness(1.1);
 }
 
 .introduction .left,
@@ -79,8 +112,71 @@ body {
     height: 100vh;
     min-width: 480px;
     flex-grow: 1;
+    flex-basis: 50%;
 }
 
 .introduction .left {
-    background: linear-gradient(90deg, aliceblue, rgba(240, 248, 255, 0));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0 70px;
+    font-family: "Caveat";
+    font-weight: 900;
+    font-size: 2em;
+    text-transform: capitalize;
+    text-align: center;
+    text-shadow: 1px 1px 10px rgb(255, 136, 120);
+    color: rgba(230, 230, 250, 1);
+    white-space: pre-line;
+
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.50), rgba(240, 248, 255, 0));
+}
+
+.about_me {
+    position: relative;
+    z-index: 2;
+
+    height: 100vh;
+    background-color: aliceblue;
+}
+
+.card_frame {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: scroll;
+    height: 100vh;
+
+    background-color: lavender;
+    overflow: hidden;
+}
+
+
+.card_frame .cards {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 80%;
+    padding: clamp(5px, 1vw, 10px);
+
+    border: solid 1px rebeccapurple;
+    overflow: hidden;
+    transform: skewX(-3deg);
+}
+
+.card_frame .card {
+    min-height: 500px;
+    max-height: 500px;
+    min-width: 300px;
+    max-width: 300px;
+    margin: clamp(5px, 1vw, 10px);
+    border: solid 1px skyblue;
+
+    background-image: url("../img/background.png");
+    background-size: cover;
+    filter: brightness(.5);
 }
